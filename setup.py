@@ -19,7 +19,7 @@ setup(
     description='A sample Python project',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/pypa/sampleproject',
+    url='https://github.com/aevalo/modules',
     author='Arttu Valo',
     author_email='arttu.valo@gmail.com',
     classifiers=[
