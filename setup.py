@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """A setuptools based setup module.
 
 See:
@@ -7,6 +8,7 @@ https://github.com/pypa/sampleproject
 
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
+from Cython.Build import cythonize
 import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
@@ -58,5 +60,8 @@ setup(
         'Say Thanks!': 'http://saythanks.io/to/example',
         'Source': 'https://github.com/pypa/sampleproject/',
     },
-    test_suite='tests'
+    test_suite='tests',
+    ext_modules=cythonize('src/helloworld.pyx', language_level='3', build_dir='build'),
+    setup_requires=['pytest-runner', 'flake8'],
+    tests_require=['pytest']
 )
